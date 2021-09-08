@@ -3,7 +3,7 @@ const { Producto } = require("../models");
 
 const crearProducto = async (req,res=response)=>{
     const {nombre,precio,categoria,descripcion,disponible}=req.body;
-    const productoDB = await Producto.findOne(nombre);
+    const productoDB = await Producto.findOne({nombre: nombre});
     
     if (productoDB) {
         return res.status(400).json({msg : 'el producto ya existe '});

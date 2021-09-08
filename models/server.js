@@ -41,7 +41,7 @@ class Server {
         // Lectura y parseo del body
         this.app.use( express.json() );
 
-        // Directorio Público
+        // Directorio Público para servir el contenido
         this.app.use( express.static('public') );
 
     }

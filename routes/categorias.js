@@ -30,7 +30,7 @@ router.get('/:id',[
 
 //crear categoria privado - persona con token valido 
 
-router.post('/:id',[
+router.post('/',[
     validarJWT,
     check('nombre',['nombre requerido']).notEmpty(),
     
