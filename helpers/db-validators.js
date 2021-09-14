@@ -28,11 +28,22 @@ const existeUsuarioPorId = async( id ) => {
     }
 }
 
+const coleccionesPermitidas = (coleccion = '' , colecciones = [])=>{
+
+const oncluida = colecciones.includes(coleccion);
+
+if (!oncluida) {
+    throw new Error('coleccion no permitida');
+
+}
+return true 
+};
 
 
 module.exports = {
     esRoleValido,
     emailExiste,
-    existeUsuarioPorId
+    existeUsuarioPorId,
+    coleccionesPermitidas 
 }
 
